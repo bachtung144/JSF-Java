@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: bacht
+  Date: 2/21/2021
+  Time: 10:42 PM
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <title>Homepage</title>
+</h:head>
+
+<h:body>
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:graphicImage name="check.png" width="50" height="50" library="image"/>
+            <h1>PHIEU KHAO SAT</h1>
+        </h:panelGrid>
+
+        <h:panelGrid columns="2">
+            <h:outputLabel value="Ho ten" for="#{surveyBean.name}"/>
+            <h:inputText id="txtHoTen" value="#{surveyBean.name}"/>
+            <h:outputLabel value="Nam sinh" for="#{surveyBean.year}"/>
+            <h:inputText id="txtNamSinh" value="#{surveyBean.year}"/>
+            <h:outputLabel value="Gioi tinh"/>
+            <h:selectOneRadio id="rdoGioiTinh" value="#{surveyBean.gender}">
+                <f:selectItem itemValue="Nam" itemLabel="Nam" />
+                <f:selectItem itemValue="Nu" itemLabel="Nu"/>
+            </h:selectOneRadio>
+        </h:panelGrid>
+
+        <h:panelGrid>
+            <h:outputLabel value="Ngon ngu lap trinh yeu thich?"/>
+            <h:selectManyCheckbox id="chkNgonNgu" value="#{surveyBean.languages}">
+                <f:selectItem itemValue="C/C++"/>
+                <f:selectItem itemValue="Java"/>
+                <f:selectItem itemValue="Python"/>
+                <f:selectItem itemValue="Ruby"/>
+                <f:selectItem itemValue="PHP"/>
+            </h:selectManyCheckbox>
+        </h:panelGrid>
+
+        <h:panelGrid columns="2">
+            <h:outputLabel value="Khac"/>
+            <h:inputText id="txtNgonNguKhac" value="#{surveyBean.other}"/>
+        </h:panelGrid>
+
+        <h:panelGrid>
+            <h:outputLabel value="Tai sao ban yeu thich cac ngon ngu do?"/>
+            <h:inputTextarea id="txtTaiSao" rows="4" cols="50" value="#{surveyBean.reason}"/>
+        </h:panelGrid>
+
+        <h:panelGrid>
+            <h:commandButton value="Gui" style="background-color: blue;color: white" />
+        </h:panelGrid>
+        <h:outputText value="#{surveyBean.response}" escape="false"/>
+    </h:form>
+</h:body>
+</html>
