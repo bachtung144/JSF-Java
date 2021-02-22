@@ -3,14 +3,13 @@ package com.dht.bean;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import java.io.Serializable;
 
 @ManagedBean
 @RequestScoped
 
-public class SurveyBean implements Serializable {
+public class SurveyBean  {
     private String name,gender,other,reason;
-    private int year;
+    private String year;
     private String[] languages;
 
     public String getName() {
@@ -45,11 +44,11 @@ public class SurveyBean implements Serializable {
         this.reason = reason;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
@@ -68,7 +67,7 @@ public class SurveyBean implements Serializable {
         StringBuilder builder = new StringBuilder();
         if (this.name != null){
             builder.append(String.format("Ho ten: %s<br>",this.name));
-            builder.append(String.format("Nam sinh: %d<br>",this.year));
+            builder.append(String.format("Nam sinh: %s<br>",this.year));
             builder.append(String.format("Gioi tinh: %s<br>",this.gender));
         }
         return builder.toString();
