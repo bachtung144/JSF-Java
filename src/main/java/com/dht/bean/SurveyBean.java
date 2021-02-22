@@ -1,15 +1,14 @@
 package com.dht.bean;
 
 
-import javax.annotation.ManagedBean;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.inject.Named;
+import java.io.Serializable;
 
 @ManagedBean
-@Named(value = "surveyBean")
 @RequestScoped
 
-public class SurveyBean {
+public class SurveyBean implements Serializable {
     private String name,gender,other,reason;
     private int year;
     private String[] languages;

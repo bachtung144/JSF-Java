@@ -18,10 +18,49 @@
 </h:head>
 
 <h:body>
-    <h2>JSF 2.0 Hello World Example - hello.xhtml</h2>
     <h:form>
-        <h:inputText value="#{helloBean.name}"/>
-        <h:commandButton value="Welcome Me" action="welcome"/>
+        <h:panelGrid columns="2">
+            <h:graphicImage name="check.png" width="50" height="50" library="image"/>
+            <h1>PHIEU KHAO SAT</h1>
+        </h:panelGrid>
+
+        <h:panelGrid columns="2">
+            <h:outputLabel value="Ho ten" for="#{surveyBean.name}"/>
+            <h:inputText id="txtHoTen" value="#{surveyBean.name}"/>
+            <h:outputLabel value="Nam sinh" for="#{surveyBean.year}"/>
+            <h:inputText id="txtNamSinh" value="#{surveyBean.year}"/>
+            <h:outputLabel value="Gioi tinh"/>
+            <h:selectOneRadio id="rdoGioiTinh" value="#{surveyBean.gender}">
+                <f:selectItem itemValue="Nam" itemLabel="Nam" />
+                <f:selectItem itemValue="Nu" itemLabel="Nu"/>
+            </h:selectOneRadio>
+        </h:panelGrid>
+
+        <h:panelGrid>
+            <h:outputLabel value="Ngon ngu lap trinh yeu thich?"/>
+            <h:selectManyCheckbox id="chkNgonNgu" value="#{surveyBean.languages}">
+                <f:selectItem itemValue="C/C++"/>
+                <f:selectItem itemValue="Java"/>
+                <f:selectItem itemValue="Python"/>
+                <f:selectItem itemValue="Ruby"/>
+                <f:selectItem itemValue="PHP"/>
+            </h:selectManyCheckbox>
+        </h:panelGrid>
+
+        <h:panelGrid columns="2">
+            <h:outputLabel value="Khac"/>
+            <h:inputText id="txtNgonNguKhac" value="#{surveyBean.other}"/>
+        </h:panelGrid>
+
+        <h:panelGrid>
+            <h:outputLabel value="Tai sao ban yeu thich cac ngon ngu do?"/>
+            <h:inputTextarea id="txtTaiSao" rows="4" cols="50" value="#{surveyBean.reason}"/>
+        </h:panelGrid>
+
+        <h:panelGrid>
+            <h:commandButton value="Gui" style="background-color: blue;color: white" />
+        </h:panelGrid>
+        <h:outputText value="#{surveyBean.response}" escape="false"/>
     </h:form>
 </h:body>
 </html>
