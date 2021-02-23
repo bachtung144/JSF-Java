@@ -15,9 +15,15 @@
 <h:head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
     <title>Homepage</title>
+    <f:loadBundle var="msg" basename="com.dht.messages"/>
 </h:head>
 
 <h:body>
+    <!--    Pass param propeties-->
+    <h:outputFormat value="#{msg['survey.hello']}">
+        <f:param value="Tung"/>
+    </h:outputFormat>
+
     <h:form>
         <!--Title-->
         <h:panelGrid columns="2">
@@ -27,7 +33,7 @@
 
         <!--Name-->
         <h:panelGrid columns="3">
-            <h:outputLabel value="Ho ten" for="#{surveyBean.name}"/>
+            <h:outputLabel value="#{msg['survey.name']}" for="#{surveyBean.name}"/>
             <h:inputText id="txtHoTen"
                          value="#{surveyBean.name}"
                          required="true"
@@ -37,7 +43,7 @@
 
         <!--Birth-->
         <h:panelGrid columns="3">
-            <h:outputLabel value="Nam sinh" for="#{surveyBean.year}"/>
+            <h:outputLabel value="#{msg['survey.year']}" for="#{surveyBean.year}"/>
             <h:inputText id="txtNamSinh"
                          value="#{surveyBean.year}"
                          required="true"

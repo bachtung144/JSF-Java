@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: bacht
+  Date: 2/23/2021
+  Time: 5:51 PM
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title>Ajax Demo</title>
+    <script type="text/javascript">
+        function test(){
+            console.log("Testing ....")
+        }
+    </script>
+</h:head>
+
+<h:body>
+    <h:form>
+        <h:inputText id="inputId" value="#{ajaxBean.name}"/>
+        <h:commandButton  value="Send">
+            <f:ajax execute="inputId" render="outputId" onevent="test"/>
+        </h:commandButton>
+
+        <h:outputText id="outputId" value="#{ajaxBean.name != null ? ajaxBean.message : ''}"/>
+    </h:form>
+</h:body>
+
+</html>

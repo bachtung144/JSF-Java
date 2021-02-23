@@ -72,4 +72,8 @@ public class SurveyBean  {
         }
         return builder.toString();
     }
+
+    public String goAjax() {
+        return "ajax?faces-redirect=true";
+    }
 }

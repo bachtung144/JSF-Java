@@ -18,12 +18,17 @@
 </h:head>
 
 <h:body>
-    <ui:composition template="templates/base.xhtml">
+    <ui:decorate template="templates/base.xhtml">
         <ui:param name="des" value="Day la trang chu"/> <!--param header-->
         <ui:define name="content">
             DAY LA NOI DUNG KHAO SAT <!--Ghi de content-->
         </ui:define>
-    </ui:composition>
+    </ui:decorate>
+    <h:form>
+        <h:commandButton value="Go to ajax page" action="#{surveyBean.goAjax()}"> <!--chuyen trang-->
+
+        </h:commandButton>
+    </h:form>
 </h:body>
 
 </html>
